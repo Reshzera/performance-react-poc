@@ -1,0 +1,150 @@
+.app {
+  width: min(980px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.intro-copy,
+.card-copy {
+  max-width: 64ch;
+  color: var(--text-soft);
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field span,
+.pulse-card span,
+.stats span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.field input,
+.row input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--text-strong);
+  font: inherit;
+}
+
+.field input {
+  height: 3rem;
+  padding: 0 1rem;
+}
+
+.button {
+  height: 3rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #67e8f9, #facc15);
+  color: #08111f;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pulse-card,
+.card {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.pulse-card {
+  min-width: 140px;
+  padding: 0.9rem 1rem;
+}
+
+.pulse-card strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.35rem;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem;
+}
+
+.card-bad {
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.18), rgba(15, 23, 42, 0.96));
+}
+
+.card-good {
+  background: linear-gradient(180deg, rgba(12, 74, 110, 0.18), rgba(15, 23, 42, 0.96));
+}
+
+.card-header h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.row {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.row span {
+  font-weight: 600;
+}
+
+.row input {
+  height: 2.7rem;
+  padding: 0 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .app {
+    width: min(100vw - 1rem, 980px);
+    padding-top: 1rem;
+  }
+
+  .toolbar,
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}
