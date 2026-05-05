@@ -1,4 +1,4 @@
-import { memo, useCallback, useDeferredValue, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 import {
   buildGoodVisibleItems,
   createDrafts,
@@ -11,7 +11,7 @@ type GoodListProps = {
   query: string
 }
 
-const GoodList = memo(function GoodList({ items, query }: GoodListProps) {
+function GoodList({ items, query }: GoodListProps) {
   const renderCount = trackRender('good-list')
   const [drafts, setDrafts] = useState<DraftMap>(() => createDrafts(items))
   const deferredQuery = useDeferredValue(query)
@@ -66,6 +66,6 @@ const GoodList = memo(function GoodList({ items, query }: GoodListProps) {
       </div>
     </article>
   )
-})
+}
 
 export default GoodList
