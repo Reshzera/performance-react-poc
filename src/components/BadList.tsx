@@ -4,11 +4,10 @@ import type { DraftMap, Item } from "./list-utils";
 
 type BadListProps = {
   items: Item[];
-  parentPulse: number;
   query: string;
 };
 
-function BadList({ items, query, parentPulse }: BadListProps) {
+function BadList({ items, query }: BadListProps) {
   const renderCount = trackRender("bad-list");
   const [drafts, setDrafts] = useState<DraftMap>(() => createDrafts(items));
   const [visibleItems, setVisibleItems] = useState(() =>
@@ -19,7 +18,7 @@ function BadList({ items, query, parentPulse }: BadListProps) {
   useEffect(() => {
     setVisibleItems(buildBadVisibleItems(items, query, drafts));
     setEffectRuns((value) => value + 1);
-  }, [items, query, drafts, parentPulse]);
+  }, [items, query, drafts]);
 
   return (
     <article className="card card-bad">
